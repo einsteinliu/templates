@@ -1,0 +1,21 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (TypeTemplate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Source.cpp
+d:\study\c++\templates\moderneffective\typetemplate\source.cpp(52): warning C4101: 'subParam': unreferenced local variable
+  d:\study\c++\templates\moderneffective\typetemplate\source.cpp(75): note: see reference to function template instantiation 'void funcPointPoint<int>(T **)' being compiled
+          with
+          [
+              T=int
+          ]
+d:\study\c++\templates\moderneffective\typetemplate\source.cpp(46): warning C4101: 'subParam': unreferenced local variable
+  d:\study\c++\templates\moderneffective\typetemplate\source.cpp(77): note: see reference to function template instantiation 'void funcPoint<int>(T *)' being compiled
+          with
+          [
+              T=int
+          ]
+d:\study\c++\templates\moderneffective\typetemplate\source.cpp(40): warning C4101: 'subParam': unreferenced local variable
+  d:\study\c++\templates\moderneffective\typetemplate\source.cpp(81): note: see reference to function template instantiation 'void funcRef<int>(T &)' being compiled
+          with
+          [
+              T=int
+          ]
+  TypeTemplate.vcxproj -> D:\Study\C++\Templates\ModernEffective\Debug\Type.exe
