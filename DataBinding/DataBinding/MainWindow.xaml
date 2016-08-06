@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="400.838">
     <Grid Margin="0,0,4,-0.2">
-        <ListBox x:Name="listBox" ItemsSource="{Binding Names}" SelectedItem="{Binding selectedName, Mode=OneWayToSource}" SelectionChanged="listBox_SelectionChanged" HorizontalAlignment="Left" Height="213" Margin="10,10,0,0" VerticalAlignment="Top" Width="168"/>
+        <ListBox x:Name="listBox" ItemsSource="{Binding Path=Names}" SelectedItem="{Binding selectedName, Mode=TwoWay}" SelectionChanged="listBox_SelectionChanged" HorizontalAlignment="Left" Height="213" Margin="10,10,0,0" VerticalAlignment="Top" Width="168"/>
         <Button x:Name="button" Content="Remove 0" HorizontalAlignment="Left" Margin="65,269,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
         <Button x:Name="button1" Content="Add" HorizontalAlignment="Left" Margin="234,269,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
         <ListBox x:Name="listBox1" HorizontalAlignment="Left" Height="213" Margin="195,10,0,0" VerticalAlignment="Top" Width="187"/>
