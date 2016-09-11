@@ -1,11 +1,19 @@
 #include <iostream>
 #include <algorithm>
+#include <functional>
 #include <vector>
 using namespace std;
 
 
+void testBind();
+void testClosureMove();
+
 int main()
 {
+	testClosureMove();
+	//testBind();
+	return 1;
+
 	auto l = []() {return 4; };
 	auto k = l;
 	
@@ -17,7 +25,6 @@ int main()
 			return value == comp; 
 		}
 	);
-
 	
 	int cap2 = 3;
 	int cap3 = 4;
@@ -42,4 +49,34 @@ int main()
 
 	int n;
 	cin >> n;
+}
+
+void originalFunc(double a, double b, string c)
+{
+	cout << a << " " << b << " " << c.c_str() << endl;
+}
+
+void testBind()
+{
+	auto newlyBindedFunc = bind(originalFunc, placeholders::_2, 10.5, placeholders::_1);
+	newlyBindedFunc("Hello world",2);
+	int k;
+	cin >> k;
+}
+
+void testClosureMove()
+{
+	vector<int> originalData{ 1,2,3,4,5,6,7 };
+
+	auto func = bind([](vector<int> &data)
+	{
+		for (int i = 0; i < data.size(); i++)
+		{
+			cout << data[i] << " ";
+		}
+	},
+		move(originalData)
+		);
+
+	func();
 }
