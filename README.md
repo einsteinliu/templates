@@ -1,6 +1,6 @@
 # Templates
 
-Some code templates may be used in the future.
+This depository stores some code templates and technique study samples which may be used in the future.
 
 ## DataBinding
 
