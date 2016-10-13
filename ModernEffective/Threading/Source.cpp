@@ -8,27 +8,41 @@ using namespace std;
 
 atomic<int> v{ 0 };
 
+//volatile int v = 0;
 
-int testThread2()
+//int v = 0;
+
+void testThread2()
 {
-	std::this_thread::sleep_for(std::chrono::seconds(1));
-	cout << "slept for 1 seconds\n";
-	return 2;
+	int n = 1000;
+	while (n--)
+	{
+		//std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		//if ((v != 10) && (v != 11))
+		cout << v << endl;
+	}
 }
 
-int testThread1()
+void testThread1()
 {
-	std::this_thread::sleep_for(std::chrono::seconds(3));
-	cout << "slept for 3 second\n";
-	return 1;
+	int n = 1000;
+	while (n--)
+	{
+		//std::this_thread::sleep_for(std::chrono::milliseconds(100));		
+		v = 10;
+		cout << v << endl;
+		v++;
+		v--;
+	}
 }
 
 void main()
 {	
-	//thread newThread(testThread);
-	//newThread.join();	
-	Timer timer;
-	timer.Start();
+	//Timer timer;
+	//timer.Start();
+
+	//thread newThread1(testThread1);
+	//thread newThread2(testThread2);	
 	
 	/*async(launch::async, testThread1);
 	async(launch::async, testThread2);*/
@@ -39,15 +53,20 @@ void main()
 	auto fuRes1 = async(launch::async, testThread1);
 	auto fuRes2 = async(launch::async, testThread2);
 	
-	cout << "fures1 valid:" << fuRes1.valid() << endl;
-	cout << fuRes1.get() << endl;
-	cout << "fures1 valid:" << fuRes1.valid() << endl;
-	//fuRes2.get();
+	//cout << "fures1 valid:" << fuRes1.valid() << endl;
+	//cout << fuRes1.get() << endl;
+	//cout << "fures1 valid:" << fuRes1.valid() << endl;
+	////fuRes2.get();
 
-	cout << fuRes2.get() << endl;
-	//cout << fuRes1.get() << " " << fuRes2.get() << endl;
-	timer.Stop();
-	cout << timer.Elapsed() << endl;
+	//cout << fuRes2.get() << endl;
+	////cout << fuRes1.get() << " " << fuRes2.get() << endl;
+
+	//timer.Stop();
+	//cout << timer.Elapsed() << endl;
+
+	//newThread1.join();
+	//newThread2.join();
+
 	int h;
 	cin >> h;
 	return;
