@@ -16,6 +16,10 @@ Contains the demo codes when reading the book [Effective Modern C++](http://shop
 
 The corresponding reading notes are listed in my blog [C++ Notes](https://einsteinliu.github.io/tags/#C++)
 
+## Named Pipe
+
+An example of named pipe communication between C++ and python, including test programs and read to use python class and C++ class
+
 ## Graph 
 
 An implementation of Graph data structure
