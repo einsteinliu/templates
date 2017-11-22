@@ -143,6 +143,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\CPipe.cpp" />
+    <ClCompile Include="WinPipe.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WinPipe.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
