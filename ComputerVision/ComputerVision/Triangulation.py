@@ -1,15 +1,3 @@
-
-# coding: utf-8
-
-# In[ ]:
-
-
-
-
-# In[32]:
-
-import cv2
-import math
 import numpy as np 
 import matplotlib.pyplot as plt
 
@@ -31,7 +19,7 @@ def project(P,X):
 X = np.zeros([4,1])
 X[0,0] = 2
 X[1,0] = 2
-X[2,0] = 10
+X[2,0] = 22
 X[3,0] = 1
 
 P1 = np.zeros([3,4])
@@ -53,14 +41,18 @@ P2 = np.zeros([3,4])
 P2[0:3,0:3] = R
 P2[0:3,3:4] = t
 
-X_t = np.zeros(X.shape)
-X_t[2,0] = 40
-X = X + X_t
-print(X)
-x2 = project(P2,X)
+reconstructed_depth = []
+for i in range(-1800,1800):
+	delta = i*0.001	
+	X_t = np.zeros(X.shape)
+	X_t[1,0] = delta
+	X2 = X + X_t
+	x2 = project(P2,X2)
+	X_re = reconstruct_X_DLT(P1,P2,x1,x2)
+	reconstructed_depth.append(X_re[2])
 
-X_re = reconstruct_X_DLT(P1,P2,x1,x2)
-print(X_re)
+plt.plot(reconstructed_depth,'r')
+plt.show()
 
 
 # In[ ]:
